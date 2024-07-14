@@ -128,8 +128,7 @@
 .container-links__titulo {
     font-size: 15px;
     color: var(--offwhite);
-    position: relative;
-}
+    position: relative;}
 
 .container-links__titulo::before,
 .container-links__titulo::after {
@@ -191,4 +190,18 @@
     background-image: url('../img/prancheta.svg');
     background-repeat: no-repeat;
     background-position: center;
+}
+
+
+
+.img-creatus {
+    width: 500px;
+    height: 200px;
+}
+
+
+.img-creatus {
+    width: 100%;
+    height: auto;
+    max-width: 500px; 
 }
