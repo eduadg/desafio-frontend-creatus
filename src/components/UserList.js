@@ -8,7 +8,7 @@ const UserList = ({ users, onEdit, onDelete }) => {
           <th>Email</th>
           <th>Name</th>
           <th>Level</th>
-          <th>Actions</th>
+          <th>Editar/Deletar</th>
         </tr>
       </thead>
       <tbody>
