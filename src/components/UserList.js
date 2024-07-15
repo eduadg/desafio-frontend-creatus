@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserList = ({ users, onEdit, onDelete }) => {
   return (
-    <table>
+    <table className="user-table">
       <thead>
         <tr>
           <th>Email</th>
@@ -18,8 +18,8 @@ const UserList = ({ users, onEdit, onDelete }) => {
             <td>{user.name}</td>
             <td>{user.level}</td>
             <td>
-              <button onClick={() => onEdit(user)}>Edit</button>
-              <button onClick={() => onDelete(user.id)}>Delete</button>
+              <button className="btn btn-edit" onClick={() => onEdit(user)}>Edit</button>
+              <button className="btn btn-delete" onClick={() => onDelete(user.id)}>Delete</button>
             </td>
           </tr>
         ))}

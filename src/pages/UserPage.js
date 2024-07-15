@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getUsers, createUser, updateUser, deleteUser } from '../services/api';
 import UserForm from '../components/UserForm';
-import UserList from '../components/UserList';
+import UserTable from '../components/UserTable';
 import '../styles/UserPage.css';
 
 const UserPage = () => {
@@ -19,19 +19,27 @@ const UserPage = () => {
   };
 
   const handleCreateOrUpdate = async (user) => {
-    if (currentUser) {
-      await updateUser(currentUser.id, user);
-    } else {
-      await createUser(user);
+    try {
+      if (currentUser) {
+        await updateUser(currentUser.id, user);
+      } else {
+        await createUser(user);
+      }
+      fetchUsers();
+      setFormVisible(false);
+      setCurrentUser(null);
+    } catch (error) {
+      console.error('Error creating/updating user:', error);
     }
-    fetchUsers();
-    setFormVisible(false);
-    setCurrentUser(null);
   };
 
   const handleDelete = async (id) => {
-    await deleteUser(id);
-    fetchUsers();
+    try {
+      await deleteUser(id);
+      fetchUsers();
+    } catch (error) {
+      console.error('Error deleting user:', error);
+    }
   };
 
   const handleEdit = (user) => {
@@ -40,9 +48,11 @@ const UserPage = () => {
   };
 
   return (
-    <div>
-      <h1>Usuários</h1>
-      <button onClick={() => setFormVisible(true)}>Adicionar Usuário</button>
+    <div className="usuarios-container">
+      <div className="usuarios-header">
+        <h1>Usuários</h1>
+        <button className="adicionar-usuario-btn" onClick={() => setFormVisible(true)}>Adicionar Usuário</button>
+      </div>
       {formVisible && (
         <UserForm
           user={currentUser}
@@ -53,7 +63,7 @@ const UserPage = () => {
           }}
         />
       )}
-      <UserList users={users} onEdit={handleEdit} onDelete={handleDelete} />
+      <UserTable users={users} onEdit={handleEdit} onDelete={handleDelete} />
     </div>
   );
 };

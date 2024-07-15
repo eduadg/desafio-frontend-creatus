@@ -3,25 +3,26 @@ import React, { useState, useEffect } from 'react';
 const UserForm = ({ user, onSubmit, onCancel }) => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
-  const [level, setLevel] = useState(1);
+  const [accessLevel, setAccessLevel] = useState('');
   const [password, setPassword] = useState('');
 
   useEffect(() => {
     if (user) {
       setEmail(user.email);
       setName(user.name);
-      setLevel(user.level);
+      setAccessLevel(user.accessLevel);
+      setPassword(user.password); // Inclua a senha atual se necessário
     }
   }, [user]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ email, name, level, password });
+    onSubmit({ email, name, accessLevel, password });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form className="user-form" onSubmit={handleSubmit}>
+      <div className="form-group">
         <label>Email</label>
         <input
           type="email"
@@ -30,7 +31,7 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
           required
         />
       </div>
-      <div>
+      <div className="form-group">
         <label>Name</label>
         <input
           type="text"
@@ -39,18 +40,16 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
           required
         />
       </div>
-      <div>
-        <label>Level</label>
+      <div className="form-group">
+        <label>Access Level</label>
         <input
-          type="number"
-          value={level}
-          onChange={(e) => setLevel(Number(e.target.value))}
-          min="1"
-          max="5"
+          type="text"
+          value={accessLevel}
+          onChange={(e) => setAccessLevel(e.target.value)}
           required
         />
       </div>
-      <div>
+      <div className="form-group">
         <label>Password</label>
         <input
           type="password"
@@ -59,8 +58,10 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
           required
         />
       </div>
-      <button type="submit">Save</button>
-      <button type="button" onClick={onCancel}>Cancel</button>
+      <div className="form-actions">
+        <button type="submit" className="btn btn-save">Save</button>
+        <button type="button" className="btn btn-cancel" onClick={onCancel}>Cancel</button>
+      </div>
     </form>
   );
 };

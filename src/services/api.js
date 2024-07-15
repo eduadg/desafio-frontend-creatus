@@ -14,16 +14,21 @@ export const getUsers = async () => {
   return response.data;
 };
 
+export const searchUsers = async (query) => {
+  const response = await api.get(`/search?query=${query}`);
+  return response.data;
+};
+
 export const createUser = async (user) => {
-  const response = await api.post('/users', user);
+  const response = await api.post('/user', user);
   return response.data;
 };
 
 export const updateUser = async (id, user) => {
-  const response = await api.put(`/users/${id}`, user);
+  const response = await api.put(`/user/${id}`, user);
   return response.data;
 };
 
 export const deleteUser = async (id) => {
-  await api.delete(`/users/${id}`);
+  await api.delete(`/user/${id}`);
 };

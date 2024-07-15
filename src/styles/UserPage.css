@@ -1,19 +1,141 @@
-/* Estilos para a UserPage */
-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-  }
-  
-  th {
-    background-color: #f4f4f4;
-  }
-  
-  button {
-    margin: 0 5px;
-  }
-  
+
+body, h1, h2, h3, h4, h5, h6, p, a, th, td, label, input, button {
+  color: #000; 
+}
+
+/* Estilos para a página de usuários */
+.usuarios-container {
+  background-color: #fff; 
+  padding: 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  max-width: 800px; 
+  margin: 20px auto; 
+}
+
+.usuarios-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; 
+}
+
+.usuarios-tabela {
+  width: 100%; 
+  border-collapse: collapse;
+}
+
+.usuarios-tabela th, .usuarios-tabela td {
+  text-align: left; 
+  padding: 8px; 
+  border-bottom: 1px solid #000; 
+}
+
+.usuarios-tabela th {
+  color: #333; 
+  font-weight: bold; 
+}
+
+.adicionar-usuario-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50; 
+  color: white; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+}
+
+.adicionar-usuario-btn:hover {
+  background-color: #45a049; 
+}
+
+/* Estilos para a UserTable */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.user-table th, .user-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.user-table .btn {
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.user-table .btn-edit {
+  background-color: #007bff;
+}
+
+.user-table .btn-delete {
+  background-color: #dc3545;
+}
+
+/* Estilos para o formulário de usuários */
+.user-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.user-form .form-group {
+  margin-bottom: 15px;
+}
+
+.user-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.user-form input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.user-form .form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-form .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-form .btn-save {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.user-form .btn-cancel {
+  background-color: #f44336;
+  color: white;
+}
