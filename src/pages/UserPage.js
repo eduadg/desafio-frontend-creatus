@@ -20,6 +20,7 @@ const UserPage = () => {
 
   const handleCreateOrUpdate = async (user) => {
     try {
+      console.log('Creating/updating user:', user);
       if (currentUser) {
         await updateUser(currentUser.id, user);
       } else {

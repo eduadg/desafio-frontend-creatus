@@ -5,23 +5,29 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
   const [name, setName] = useState('');
   const [accessLevel, setAccessLevel] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   useEffect(() => {
     if (user) {
       setEmail(user.email);
       setName(user.name);
-      setAccessLevel(user.accessLevel);
-      setPassword(user.password); // Inclua a senha atual se necessário
+      setAccessLevel(user.accessLevel.toString()); // Convertendo para string
     }
   }, [user]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ email, name, accessLevel, password });
+    if (parseInt(accessLevel) < 1 || parseInt(accessLevel) > 5) {
+      setError('Access level must be between 1 and 5');
+      return;
+    }
+    setError('');
+    onSubmit({ email, name, accessLevel: accessLevel.toString(), password }); // Convertendo para string
   };
 
   return (
     <form onSubmit={handleSubmit} className="user-form">
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       <div className="form-group">
         <label className="user-form-label">Email</label>
         <input
@@ -43,10 +49,12 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
       <div className="form-group">
         <label className="user-form-label">Access Level</label>
         <input
-          type="text"
+          type="number"
           value={accessLevel}
           onChange={(e) => setAccessLevel(e.target.value)}
           required
+          min="1"
+          max="5"
         />
       </div>
       <div className="form-group">

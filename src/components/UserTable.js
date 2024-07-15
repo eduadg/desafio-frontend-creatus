@@ -7,7 +7,7 @@ const UserTable = ({ users, onEdit, onDelete }) => {
         <tr>
           <th>Email</th>
           <th>Name</th>
-          <th>Level</th>
+          <th>Access Level</th>
           <th>Editar/Deletar</th>
         </tr>
       </thead>
@@ -16,7 +16,7 @@ const UserTable = ({ users, onEdit, onDelete }) => {
           <tr key={user.id}>
             <td>{user.email}</td>
             <td>{user.name}</td>
-            <td>{user.level}</td>
+            <td>{user.accessLevel}</td>
             <td>
               <button className="btn btn-edit" onClick={() => onEdit(user)}>Edit</button>
               <button className="btn btn-delete" onClick={() => onDelete(user.id)}>Delete</button>
