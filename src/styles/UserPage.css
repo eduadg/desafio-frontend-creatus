@@ -1,10 +1,9 @@
-
-body, h1, h2, h3, h4, h5, h6, p, a, th, td, label, input, button {
-  color: #000; 
+.user-page .usuarios-titulo {
+  color: #000; /* Define a cor do título */
 }
 
 /* Estilos para a página de usuários */
-.usuarios-container {
+.user-page {
   background-color: #fff; 
   padding: 20px; 
   border-radius: 8px; 
@@ -13,30 +12,32 @@ body, h1, h2, h3, h4, h5, h6, p, a, th, td, label, input, button {
   margin: 20px auto; 
 }
 
-.usuarios-header {
+.user-page .usuarios-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px; 
 }
 
-.usuarios-tabela {
+.user-page .usuarios-tabela {
   width: 100%; 
   border-collapse: collapse;
 }
 
-.usuarios-tabela th, .usuarios-tabela td {
+.user-page .usuarios-tabela th, 
+.user-page .usuarios-tabela td {
   text-align: left; 
   padding: 8px; 
   border-bottom: 1px solid #000; 
+  color: #000;
 }
 
-.usuarios-tabela th {
+.user-page .usuarios-tabela th {
   color: #333; 
   font-weight: bold; 
 }
 
-.adicionar-usuario-btn {
+.user-page .adicionar-usuario-btn {
   padding: 10px 20px;
   background-color: #4CAF50; 
   color: white; 
@@ -45,37 +46,39 @@ body, h1, h2, h3, h4, h5, h6, p, a, th, td, label, input, button {
   cursor: pointer; 
 }
 
-.adicionar-usuario-btn:hover {
+.user-page .adicionar-usuario-btn:hover {
   background-color: #45a049; 
 }
 
 /* Estilos para a UserTable */
-.user-table {
+.user-page .user-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-.user-table th, .user-table td {
+.user-page .user-table th, 
+.user-page .user-table td {
   padding: 12px 15px;
   border: 1px solid #ddd;
   text-align: left;
+  color: #000;
 }
 
-.user-table th {
+.user-page .user-table th {
   background-color: #f4f4f4;
   font-weight: bold;
 }
 
-.user-table tr:nth-child(even) {
+.user-page .user-table tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-.user-table tr:hover {
+.user-page .user-table tr:hover {
   background-color: #f1f1f1;
 }
 
-.user-table .btn {
+.user-page .user-table .btn {
   margin-right: 10px;
   padding: 5px 10px;
   border: none;
@@ -84,16 +87,16 @@ body, h1, h2, h3, h4, h5, h6, p, a, th, td, label, input, button {
   border-radius: 3px;
 }
 
-.user-table .btn-edit {
+.user-page .user-table .btn-edit {
   background-color: #007bff;
 }
 
-.user-table .btn-delete {
+.user-page .user-table .btn-delete {
   background-color: #dc3545;
 }
 
 /* Estilos para o formulário de usuários */
-.user-form {
+.user-page .user-form {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -102,40 +105,41 @@ body, h1, h2, h3, h4, h5, h6, p, a, th, td, label, input, button {
   margin: 20px auto;
 }
 
-.user-form .form-group {
+.user-page .user-form .form-group {
   margin-bottom: 15px;
 }
 
-.user-form label {
+.user-page .user-form label {
   display: block;
   margin-bottom: 5px;
+  color: #000; /* Define a cor dos labels */
 }
 
-.user-form input {
+.user-page .user-form input {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.user-form .form-actions {
+.user-page .user-form .form-actions {
   display: flex;
   justify-content: space-between;
 }
 
-.user-form .btn {
+.user-page .user-form .btn {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.user-form .btn-save {
+.user-page .user-form .btn-save {
   background-color: #4CAF50;
   color: white;
 }
 
-.user-form .btn-cancel {
+.user-page .user-form .btn-cancel {
   background-color: #f44336;
   color: white;
 }

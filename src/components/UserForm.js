@@ -21,9 +21,9 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
   };
 
   return (
-    <form className="user-form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="user-form">
       <div className="form-group">
-        <label>Email</label>
+        <label className="user-form-label">Email</label>
         <input
           type="email"
           value={email}
@@ -32,7 +32,7 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
         />
       </div>
       <div className="form-group">
-        <label>Name</label>
+        <label className="user-form-label">Name</label>
         <input
           type="text"
           value={name}
@@ -41,7 +41,7 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
         />
       </div>
       <div className="form-group">
-        <label>Access Level</label>
+        <label className="user-form-label">Access Level</label>
         <input
           type="text"
           value={accessLevel}
@@ -50,7 +50,7 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
         />
       </div>
       <div className="form-group">
-        <label>Password</label>
+        <label className="user-form-label">Password</label>
         <input
           type="password"
           value={password}

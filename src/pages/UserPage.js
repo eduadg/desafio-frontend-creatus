@@ -48,9 +48,9 @@ const UserPage = () => {
   };
 
   return (
-    <div className="usuarios-container">
+    <div className="user-page">
       <div className="usuarios-header">
-        <h1>Usuários</h1>
+        <h1 className="usuarios-titulo">Usuários</h1>
         <button className="adicionar-usuario-btn" onClick={() => setFormVisible(true)}>Adicionar Usuário</button>
       </div>
       {formVisible && (
