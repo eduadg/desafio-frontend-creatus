@@ -15,7 +15,7 @@ const UserTable = ({ users, onEdit, onDelete }) => {
           <th>Email</th>
           <th>Nome</th>
           <th>Nível de Acesso</th>
-          <th>Ações</th>
+          <th>Deletar/Salvar</th>
         </tr>
       </thead>
       <tbody>

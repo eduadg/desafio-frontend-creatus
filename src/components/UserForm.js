@@ -38,7 +38,7 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
         />
       </div>
       <div className="form-group">
-        <label className="user-form-label">Name</label>
+        <label className="user-form-label">Nome</label>
         <input
           type="text"
           value={name}
@@ -47,7 +47,7 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
         />
       </div>
       <div className="form-group">
-        <label className="user-form-label">Access Level</label>
+        <label className="user-form-label">Nivel de Acesso</label>
         <input
           type="number"
           value={accessLevel}
