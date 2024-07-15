@@ -23,10 +23,10 @@ const UserTable = ({ users, onEdit, onDelete }) => {
           <tr key={user.id}>
             <td onClick={() => handleDetailClick(user.id, user)} style={{ cursor: 'pointer' }}>{user.email}</td>
             <td onClick={() => handleDetailClick(user.id, user)} style={{ cursor: 'pointer' }}>{user.name}</td>
-            <td>{user.accessLevel}</td>
+            <td onClick={() => handleDetailClick(user.id, user)} style={{ cursor: 'pointer' }}>{user.accessLevel}</td>
             <td>
-              <button className="btn btn-edit" onClick={() => onEdit(user)}>Editar</button>
-              <button className="btn btn-delete" onClick={() => onDelete(user.id)}>Deletar</button>
+              <button className="btn btn-edit" onClick={(e) => { e.stopPropagation(); onEdit(user); }}>Editar</button>
+              <button className="btn btn-delete" onClick={(e) => { e.stopPropagation(); onDelete(user.id); }}>Deletar</button>
             </td>
           </tr>
         ))}
